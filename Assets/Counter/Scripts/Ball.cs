@@ -2,34 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour
-{
-    public Rigidbody rb;
 
 
-    // Start is called before the first frame update
-    void Awake()
+    public class Ball : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-    }
+        public Rigidbody rb;
 
-    public virtual void Launch(Vector3 direction, float force)
-    {
-        rb.AddForce(direction * force);
-    }
 
-    // If Ball collides with sensor, destroy balls
-    private void OnTriggerEnter(Collider other)
-    {
-        
-
-        if (other.gameObject.CompareTag("Sensor")) //&& gameManagerX.isGameActive)
+        // Start is called before the first frame update
+        void Awake()
         {
-            Destroy(gameObject);
-            //gameManagerX.UpdateLives(-1);
+            rb = GetComponent<Rigidbody>();
         }
 
+        public virtual void Launch(Vector3 direction, float force)
+        {
+            rb.AddForce(direction * force);
+        }
+
+        // If Ball collides with sensor, destroy balls
+        public void OnTriggerEnter(Collider other)
+        {
+
+
+            if (other.gameObject.CompareTag("Sensor")) //&& gameManagerX.isGameActive)
+            {
+                Destroy(gameObject);
+                //gameManagerX.UpdateLives(-1);
+            }
+
+        }
+
+
     }
 
-
-}

@@ -18,12 +18,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
+   
 
     // Update score with value from balls get into slot
     public void UpdateScore(int scoreToAdd)
