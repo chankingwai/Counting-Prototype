@@ -12,9 +12,9 @@ public class BigBall : Ball
 
     private void OnCollisionEnter(Collision other)
     {
-        if (!other.gameObject.CompareTag("Player")) 
+        if (!other.gameObject.CompareTag("Player") && rb.transform.localScale.x > 0.4 ) 
         {
-            transform.localScale -= new Vector3(0.02F, 0.02f, 0.02f);
+            transform.localScale -= new Vector3(0.02f, 0.02f, 0.02f);
         }
         
     }
